@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Просмотр фото</title>
+	<title>Pictures</title>
 	<style>
 		#lesson5_full_image {
 			text-align: center;
