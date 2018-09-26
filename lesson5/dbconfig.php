@@ -3,8 +3,7 @@
 define('IMAGE_PATH', '../../lesson5/img/');
 define('THUMB_PATH', '../../lesson5/thumbs/');
 
-function dbconfig()
-{
+function dbconfig() {
 	// Настройки подключения к БД.
 	$hostname = 'localhost';
 	$username = 'root';
@@ -18,7 +17,5 @@ function dbconfig()
 	global $dbc;
 	$dbc = mysqli_connect($hostname, $username, $password, $dbName) or die('No connect with data base'); 
 	mysqli_query($dbc, 'SET NAMES utf8');
-
-	// Открытие сессии.
-	// session_start();		
 }
+?>
