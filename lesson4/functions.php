@@ -2,7 +2,7 @@
 
 mb_internal_encoding("UTF-8");
 
-//Определеям максимальный размер загружаемого изображения
+//Определеям максимальный размер загружаемого изображения и подключение к MySQL
 define("GW_MAXFILESIZE", "5000000");
 define('HOSTNAME', 'localhost');
 define('USERNAME', 'root');
@@ -30,6 +30,13 @@ function upload_file($file) {
       if (copy($file['tmp_name'], 'img/'.$img_name)) {
         echo 'Файл успешно загружен';
         img_resize('img/' . $img_name, 'thumbs/' . $thumb_name, '250', '150');
+		  
+		$dbc = mysqli_connect(HOSTNAME, USERNAME, PASSWORD, DBNAME) or die('No connect with data base');
+        $query = "INSERT INTO `images` (`image_name`, `thumb_name`) VALUES ('$img_name', '$thumb_name')";
+        mysqli_query($dbc, $query)
+              or die("Ошибка при отправке запроса<br>" . mysql_error());
+        mysqli_close($dbc);  
+		  
       } else { echo 'Ошибка загрузки файла'; return;} 
     } else {
       echo "Файл не должен превышать размер в 5 Мб!"; return; }
@@ -38,6 +45,7 @@ function upload_file($file) {
     return;
   }
 }
+
 
 
 // Функция для ДЗ*:
