@@ -25,7 +25,7 @@
 			+
 			<input type="text" name="b" value="<?php echo $b; ?>"> 
 			<input type="submit" value="="> <?php echo $result1; ?>
-        </form>
+        	</form>
 
 
 
@@ -68,7 +68,7 @@
 			</select>
 			<input type="text" name="new_b" value="<?php echo $new_b; ?>"> 
 			<input type="submit" value="="> <?php echo $result2; ?>
-        </form>
+        	</form>
 
 <h2>Еще более усовершенствованный калькулятор</h2>
 <?php
@@ -106,7 +106,7 @@
 			<input type="submit" value="*" name="multiply"> 
 			<input type="submit" value="/" name="divide"> 
 			</p>
-        </form>
+        	</form>
 
 </body>
 </html>
